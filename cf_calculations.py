@@ -1,3 +1,6 @@
+"""
+cf_calculations === common factors calculations
+"""
 def divisors_of_n(n):
     """Return a list of the divisors of n."""
     divisors_list = []
