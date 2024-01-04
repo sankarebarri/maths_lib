@@ -20,3 +20,18 @@ def diff_sum(x, y, b):
 #     print(diff_sum(factor[0], factor[1], 11))
 # print(common_factor(6, 9))
 # print(hcf(7, 9))
+equ = "3x+2"
+if "+" in equ:
+    sign = "+"
+else:
+    sign = "-"
+split_equ = equ.split(sign)
+variable = split_equ[0].strip()
+constant = split_equ[1].strip()
+if sign == "+":
+    constant = -1 * float(constant)
+print(f"{variable} = {constant}")
+x = float(variable[0]) / float(constant)
+print(split_equ)
+print(variable, constant)
+print(x)
