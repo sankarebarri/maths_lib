@@ -1,0 +1,9 @@
+from quadratic import quadratic
+def test_no_solution():
+    ...
+
+def test_two_solution():
+    ...
+
+def test_one_solution():
+    ...

@@ -1,0 +1,15 @@
+--- create test for quadaratic and linear_equations
+--- probably rename quadaratic to quadratic equation or probaly a better abb.
+
+--- see how i can output the equation in a better format
+
+
+--- factorisation
+    -- return list of factorisation
+
+--- sum of the factors that corresponds
+
+--- solve linear equation
+    DONE implementation
+
+--- finish and tidy up the quadaratic equation
