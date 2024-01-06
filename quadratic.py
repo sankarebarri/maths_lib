@@ -30,12 +30,12 @@ def quadratic_equation(a, b, c, show_step=False):
         # print(equation_2)
         x_1 = linear_equation(equation_1)
         x_2 = linear_equation(equation_2)
-        print(x_1, x_2)
+        return x_1, x_2
+    else:
+        return "Can not be factored"
 
 
 
-    return
-
-print(quadratic_equation(6,11,3))
-print(quadratic_equation(4,12,9))
-print(quadratic_equation(1,10,24))
+# print(quadratic_equation(6,11,3))
+# print(quadratic_equation(4,12,9))
+# print(quadratic_equation(1,10,24))

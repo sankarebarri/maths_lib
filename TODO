@@ -1,8 +1,10 @@
+--- round answers to the 2 decimals by default, and option to give how many
+
 DONE retidy the diff_sum() in cf_calcualtions.py
 DONE deal with negative number being passed to factorisation()
 
 DONE create test for quadaratic and linear_equations
---- probably rename quadaratic to quadratic equation or probaly a better abb.
+--- probably rename quadaratic to quadratic equation or probaly a better abbre.
 
 --- see how i can output the equation in a better format
 
