@@ -34,6 +34,12 @@ def common_factor(n1, n2):
     return cf_list
 
 def factorisation(n):
+    """
+    Returns the list of factors of 'n' in pairs i.e of two numbers that multiply to n
+    NB: It will will treat negative 'n' as positive n.
+    """
+    if n < 0:
+        n = abs(n)
     cf = [] # cf = common factor
     divisors = divisors_of_n(n)
     for i in divisors:
@@ -44,32 +50,34 @@ def factorisation(n):
     return cf
 # print(factorisation(18))
 
-def diff_sum(x, y, b):
+def diff_sum(x, y, b, c):
     """
-    Different sums of x and y that equals b
-    
+    Different sums of x and y that equals b and whose products equal c.
+    e.g. if x = 6, y = 4, b = 2, c = -24 it will return (-4, 6)
+     
     Parameters:
     -----------
         x: int
         y: int
         b: int
+        c: int
 
     Returns:
     --------
         tuple: if x + y == b
         None: if x + y != b
     """
-    if x + y == b:
+    if (x + y == b) and (x * y == c):
         return (x, y)
-    elif -1*x + y == b:
+    elif (-1*x + y == b) and (-1*x * y == c):
         return (-1*x, y)
-    elif x + -1*y == b:
+    elif (x + -1*y == b) and (x * -1*y == c):
         return (x, -1*y)
-    elif -1*x + -1*y == b:
+    elif (-1*x + -1*y == b) and (-1*x * -1*y == c):
         return (-1*x, -1*y)
     else:
         return None
-
+# print(diff_sum(6,4,10,24))
 def hcf(n1, n2):
     # would like to extend the parameters to many
     """
@@ -86,3 +94,7 @@ def hcf(n1, n2):
     """
     return max(common_factor(n1, n2))
 
+a = factorisation(-24)
+print(a)
+for i in a:
+    print(diff_sum(i[0], i[1], 10, 24))
