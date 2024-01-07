@@ -4,6 +4,7 @@ def test_two_solution():
     # # 4x^2 + 12x + 9
     assert(quadratic_equation(4, 12, 9)) == (-1.5, -1.5)
     assert(quadratic_equation(1, 10, 24)) == (-6, -4)
+    # assert(quadratic_equation(1, -9, 0)) == (-3, 3)
 
 
 def test_one_solution():
