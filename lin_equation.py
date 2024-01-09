@@ -1,8 +1,8 @@
 def factor_equation(equation):
-    ...
+    pass
 
 def collect_like_terms(equation):
-    ...
+    pass
 
 def linear_equation(equation, n=2):
     if "+" in equation:

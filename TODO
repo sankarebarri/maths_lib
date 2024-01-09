@@ -1,4 +1,4 @@
---- round answers to the 2 decimals by default, and option to give how many
+DONE round answers to the 2 decimals by default, and option to give how many
 
 DONE retidy the diff_sum() in cf_calcualtions.py
 DONE deal with negative number being passed to factorisation()

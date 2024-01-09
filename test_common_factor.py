@@ -1,4 +1,4 @@
-from common_factor import hcf
+from cf_calculations import hcf
 
 def test_direct_factor():
     assert hcf(15, 3) == 3
