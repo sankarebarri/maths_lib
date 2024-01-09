@@ -92,9 +92,9 @@ def hcf(n1, n2):
     --------
         int
     """
-    return max(common_factor(n1, n2))
-
-a = factorisation(-24)
-print(a)
-for i in a:
-    print(diff_sum(i[0], i[1], 10, 24))
+    return max(common_factor(abs(n1), abs(n2)))
+print(hcf(-5,6))
+# a = factorisation(-24)
+# print(a)
+# for i in a:
+#     print(diff_sum(i[0], i[1], 10, 24))
