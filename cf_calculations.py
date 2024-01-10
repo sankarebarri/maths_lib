@@ -78,6 +78,7 @@ def diff_sum(x, y, b, c):
     else:
         return None
 # print(diff_sum(6,4,10,24))
+
 def hcf(n1, n2):
     # would like to extend the parameters to many
     """
@@ -93,8 +94,14 @@ def hcf(n1, n2):
         int
     """
     return max(common_factor(abs(n1), abs(n2)))
-print(hcf(-5,6))
+# print(hcf(-5,6))
 # a = factorisation(-24)
 # print(a)
 # for i in a:
 #     print(diff_sum(i[0], i[1], 10, 24))
+
+def factorise_equation(equation):
+    """
+    factorise simple linear equation like 2x + 10 = 2(x + 5)
+    """
+    ...
