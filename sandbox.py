@@ -1,37 +1,34 @@
-from cf_calculations import *
+from cf_calculations import hcf
+# eq = "2x + 10"
 
-a = factorisation(12)
-# b = 18
-# c, d = 2, 9
+# if "+" in eq:
+#     sign = "+"
+# elif "-" in eq:
+#     sign = "-"
+# else:
+#     sign = ""
+# # split equations(collect like terms) functions would be more intresting here
+# split = ['-2x ', ' 10']
+# eq_split = eq.split("+")
+# # print(eq_split)
+# variable, constant = eq_split[0].strip(), int(eq_split[1].strip())
+# variable_coeff = int(variable[:-1])
+# # print(variable_coeff)
+# if variable_coeff > 0 and sign == "+":
+#     cf = hcf(variable_coeff, constant)
+#     print(f"{cf}({variable_coeff/cf}x + {constant/cf})")
+# if variable_coeff < 0 and sign == "+":
 
-def diff_sum(x, y, b):
-    if x + y == b:
-        return (x, y)
-    elif -1*x + y == b:
-        return (-1*x, y)
-    elif x + -1*y == b:
-        return (x, -1*y)
-    elif -1*x + -1*y == b:
-        return (-1*x, -1*y)
+def factor(a, b):
+    if a == 0:
+        return b
+    if a > 0 and b > 0:
+        cf = hcf(a, b)
+        return f"{cf}({a/cf}x + {b / cf})"
+    else:
+        return f"{cf}(x + {b // cf})"
 
-# print(diff_sum(1, 12, -11))
-# for factor in a:
-#     print(factor[0], factor[1])
-#     print(diff_sum(factor[0], factor[1], 11))
-# print(common_factor(6, 9))
-# print(hcf(7, 9))
-equ = "3x+2"
-if "+" in equ:
-    sign = "+"
-else:
-    sign = "-"
-split_equ = equ.split(sign)
-variable = split_equ[0].strip()
-constant = split_equ[1].strip()
-if sign == "+":
-    constant = -1 * float(constant)
-print(f"{variable} = {constant}")
-x = float(variable[0]) / float(constant)
-print(split_equ)
-print(variable, constant)
-print(x)
+print(factor(7, 10))
+# print(factor(-2, 10))
+# print(factor(2, -10))
+# print(factor(-2, -10))

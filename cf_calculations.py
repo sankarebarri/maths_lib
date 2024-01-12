@@ -50,7 +50,7 @@ def factorisation(n):
     return cf
 # print(factorisation(18))
 
-def diff_sum(x, y, b, c):
+def diff_sum(x, y, b, c): # change name to diff_sum_prod
     """
     Different sums of x and y that equals b and whose products equal c.
     e.g. if x = 6, y = 4, b = 2, c = -24 it will return (-4, 6)
@@ -81,6 +81,7 @@ def diff_sum(x, y, b, c):
 
 def hcf(n1, n2):
     # would like to extend the parameters to many
+    # Implement it in euclidian algo
     """
     Return the highest common factor between n1 and n2.
 
@@ -94,7 +95,7 @@ def hcf(n1, n2):
         int
     """
     return max(common_factor(abs(n1), abs(n2)))
-# print(hcf(-5,6))
+print(hcf(210, 45))
 # a = factorisation(-24)
 # print(a)
 # for i in a:
