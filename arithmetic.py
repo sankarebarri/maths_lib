@@ -1,3 +1,13 @@
+def factors_of_n(n):
+    """
+    Return a list of the divisors of n with 1 and n included.
+    """
+    factors = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            factors.append(i)
+    return factors
+
 def is_prime(n):
     """
     Return True if n is prime. False if it is not
@@ -36,11 +46,11 @@ def prime_factorisation(n):
     while divisor <= n:
         if n % divisor == 0:
             factors.append(divisor)
-            divisor = n // divisor
+            n = n // divisor
         else:
             divisor += 1
     return factors
-
+# print(prime_factorisation(84))
 
 def lcm(a, b):
     ...
