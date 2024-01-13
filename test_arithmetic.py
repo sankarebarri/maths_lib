@@ -28,3 +28,12 @@ def test_prime_leq_n():
 
     assert(primes_leq_n(-2)) == []
     assert(primes_leq_n(-9)) == []
+
+
+def test_prime_factorisation():
+    assert(prime_factorisation(0)) == []
+    assert(prime_factorisation(1)) == []
+    
+    assert(prime_factorisation(2)) == [2]
+    assert(prime_factorisation(84)) == [2,2,3,7]
+    assert(prime_factorisation(126)) == [2,3,3,7]

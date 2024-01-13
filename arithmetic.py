@@ -27,6 +27,21 @@ def primes_leq_n(n):
             primes.append(i)
     return primes
 
+def prime_factorisation(n):
+    """
+    Return the list of prime factorisation of n
+    """
+    factors = []
+    divisor = 2
+    while divisor <= n:
+        if n % divisor == 0:
+            factors.append(divisor)
+            divisor = n // divisor
+        else:
+            divisor += 1
+    return factors
+
+
 def lcm(a, b):
     ...
 
