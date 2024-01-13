@@ -95,14 +95,35 @@ def hcf(n1, n2):
         int
     """
     return max(common_factor(abs(n1), abs(n2)))
-print(hcf(210, 45))
+
+
 # a = factorisation(-24)
 # print(a)
 # for i in a:
 #     print(diff_sum(i[0], i[1], 10, 24))
 
-def factorise_equation(equation):
+    
+
+def factorise_linear_equation(equation):
     """
     factorise simple linear equation like 2x + 10 = 2(x + 5)
     """
     ...
+    equation = equation.replace(" ", "")
+    a, b = re.findall(r'[+-]?\d*\.?\d+', equation)
+    a, b = int(a), int(b)
+        
+    if a == 0:
+        return b
+    if b == 0:
+        return f"{a}x"
+    cf = hcf(abs(a), abs(b))
+    # print(cf)
+    if a > 0 and b > 0:
+        return f"{cf}({a // cf}x + {b // cf})"
+    elif a > 0 and b < 0:
+        return f"{cf}({a // cf}x - {abs(b // cf)})"
+    elif a < 0 and b > 0:
+        return f"-{cf}({abs(a // cf)}x - {b // cf})"
+    else:
+        return f"-{cf}({abs(a // cf)}x + {abs(b // cf)})"

@@ -22,13 +22,13 @@ def quadratic_equation(a, b, c, show_step=False):
             print(f"{a}x^2 + {b_1}x + {b_2}x + {c}")
         cf_1 = hcf(a, b_1) # common factor between 'a' in the equation and b_1
         cf_2 = hcf(b_2, c)
-        print(cf_1, cf_2)
+        # print(cf_1, cf_c2)
         if show_step:
             print(f"{cf_1}x({a/cf_1}x + {b_1/cf_1}) + {cf_2}({b_2/cf_2}x + {c/cf_2})")
             print(f"({cf_1}x + {cf_2})({b_2/cf_2}x + {c/cf_2})")
         equation_1 = f"{cf_1}x + {cf_2}"
         equation_2 = f"{b_2/cf_2}x + {c/cf_2}"
-        # print(equation_1, equation_2)
+        print(equation_1, equation_2)
         x_1 = linear_equation(equation_1)
         x_2 = linear_equation(equation_2)
         return min(x_1, x_2), max(x_1, x_2)
