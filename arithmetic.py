@@ -110,3 +110,25 @@ def hcf(n1 , n2):
     a = b
     b = r
     return hcf(a, b)
+
+
+class Fraction():
+
+    def __init__(self, a, b):
+        # a = numerator, b = denominator
+        self.a = a
+        self.b = b
+
+    def reduce_fraction(self):
+        ...
+
+    def add(self):
+        ...
+    
+    def multiply(self):
+        ...
+
+    def divide(self):
+        ...
+
+    

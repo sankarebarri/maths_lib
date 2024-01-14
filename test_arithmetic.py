@@ -60,3 +60,11 @@ def test_hcf():
     assert(hcf(144, 66)) == 6
     assert(hcf(512, 84)) == 4
     assert(hcf(1000, 1000)) == 1000
+
+def test_fraction():
+    f = Fraction(3, 9)
+
+    assert(f.reduce_fraction()) == "1/3"
+    assert(f.add()) == "3/7"
+    assert(f.multiply()) == "8/9"
+    assert(f.divide()) == "7/5"
