@@ -85,7 +85,7 @@ def lcm(a, b):
     
     return product
 
-print(lcm(144, 66))
+# print(lcm(144, 66))
 
 
     
