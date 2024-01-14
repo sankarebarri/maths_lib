@@ -58,6 +58,9 @@ def prime_factorisation(n):
 # print(prime_factorisation(44))
 
 def lcm(a, b):
+    """
+    Return the Lowest Common Multiple of a and b
+    """
     if a == 0 and b == 0:
         return 0
     if a == b:
@@ -66,6 +69,7 @@ def lcm(a, b):
     pf_a = prime_factorisation(a)
     pf_b = prime_factorisation(b)
 
+    # check for the shortest list to iterate over
     if len(pf_a) > len(pf_b):
         long_pf, short_pf = pf_a, pf_b
     else:
@@ -83,6 +87,26 @@ def lcm(a, b):
 
 print(lcm(144, 66))
 
-def hcf(a, b):
-    ...
+
     
+def hcf(n1 , n2):
+    """
+    Return Highest Common Factor of n1 and n2.
+    HCF is same as GCD.
+    """
+    if n1 > n2:
+        a, b = n1, n2
+    else:
+        a, b = n2, n1
+
+    if a == 1 and b == 1:
+        return 1
+
+    if b == 0:
+        return a
+    r = a % b
+    a = a // b
+
+    a = b
+    b = r
+    return hcf(a, b)

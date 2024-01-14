@@ -52,3 +52,11 @@ def test_lcm():
     assert(lcm(144, 66)) == 1584
     assert(lcm(512, 84)) == 10752
     assert(lcm(1000, 1000)) == 1000
+
+def test_hcf():
+    assert(hcf(0, 0)) == 0
+    assert(hcf(1, 1)) == 1
+    assert(hcf(4, 8)) == 4
+    assert(hcf(144, 66)) == 6
+    assert(hcf(512, 84)) == 4
+    assert(hcf(1000, 1000)) == 1000
