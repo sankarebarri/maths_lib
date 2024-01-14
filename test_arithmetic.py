@@ -43,3 +43,12 @@ def test_prime_factorisation():
     assert(prime_factorisation(2)) == [2]
     assert(prime_factorisation(84)) == [2,2,3,7]
     assert(prime_factorisation(126)) == [2,3,3,7]
+
+
+def test_lcm():
+    assert(lcm(0, 0)) == 0
+    assert(lcm(1, 1)) == 1
+    assert(lcm(4, 8)) == 8
+    assert(lcm(144, 66)) == 1584
+    assert(lcm(512, 84)) == 10752
+    assert(lcm(1000, 1000)) == 1000

@@ -8,6 +8,10 @@ def factors_of_n(n):
             factors.append(i)
     return factors
 
+
+# a class of Prime would be more appropriate
+# i would like to implement different algorithms of prime like sieve of eratosthenes,
+# miller-rabin probability test, etc
 def is_prime(n):
     """
     Return True if n is prime. False if it is not
@@ -40,6 +44,7 @@ def primes_leq_n(n):
 def prime_factorisation(n):
     """
     Return the list of prime factorisation of n
+    e.g. 84 has prime factorisation 2x2x3x7
     """
     factors = []
     divisor = 2
@@ -50,10 +55,33 @@ def prime_factorisation(n):
         else:
             divisor += 1
     return factors
-# print(prime_factorisation(84))
+# print(prime_factorisation(44))
 
 def lcm(a, b):
-    ...
+    if a == 0 and b == 0:
+        return 0
+    if a == b:
+        return a
+
+    pf_a = prime_factorisation(a)
+    pf_b = prime_factorisation(b)
+
+    if len(pf_a) > len(pf_b):
+        long_pf, short_pf = pf_a, pf_b
+    else:
+        long_pf, short_pf = pf_b, pf_a
+
+    for p in short_pf:
+        if p not in long_pf:
+            long_pf.append(p)
+
+    product = 1
+    for n in long_pf:
+        product = product * n
+    
+    return product
+
+print(lcm(144, 66))
 
 def hcf(a, b):
     ...
