@@ -131,7 +131,7 @@ class Fraction():
         # split = a.split("/")
         # numerator, denominator = int(split[0]), int(split[1])
         
-        numerator, denominator = split(a)
+        numerator, denominator = self.split(a)
         cf = hcf(numerator, denominator)
         if int(denominator/cf) != 1:
             return f"{int(numerator/cf)}/{int(denominator/cf)}"
