@@ -114,21 +114,39 @@ def hcf(n1 , n2):
 
 class Fraction():
 
-    def __init__(self, a, b):
-        # a = numerator, b = denominator
-        self.a = a
-        self.b = b
+    # def __init__():
+        # a would be in the form a = "3/9"
+        # b would be in the form a = "3/9"
+        # self.a = a
+        # self.b = b
 
-    def reduce_fraction(self):
-        ...
+    def split(self, fraction):
+        split_fraction = fraction.split("/")
+        numerator, denominator = int(split_fraction[0]), int(split_fraction[1])
+        return numerator, denominator
 
-    def add(self):
+    def simplify(self, a):
+        if len(a) == 1:
+            return a
+        # split = a.split("/")
+        # numerator, denominator = int(split[0]), int(split[1])
+        
+        numerator, denominator = split(a)
+        cf = hcf(numerator, denominator)
+        if int(denominator/cf) != 1:
+            return f"{int(numerator/cf)}/{int(denominator/cf)}"
+        return f"{int(numerator/cf)}"
+
+    def add(self, a, b):
+        # call simplify on the final result
         ...
     
-    def multiply(self):
+    def multiply(self, a, b):
+        # call simplify on the final result
         ...
 
-    def divide(self):
+    def divide(self, a, b):
+        # call simplify on the final result
         ...
 
     
