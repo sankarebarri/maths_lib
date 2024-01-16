@@ -61,10 +61,36 @@ def test_hcf():
     assert(hcf(512, 84)) == 4
     assert(hcf(1000, 1000)) == 1000
 
-def test_fraction():
-    f = Fraction(3, 9)
+def test_fraction_class():
+    f = Fraction()
 
-    assert(f.reduce_fraction()) == "1/3"
-    assert(f.add()) == "3/7"
-    assert(f.multiply()) == "8/9"
-    assert(f.divide()) == "7/5"
+    assert(f.reduce_fraction("0")) == "0"
+    assert(f.reduce_fraction("1")) == "1"
+
+    assert(f.reduce_fraction("1/1")) == "1"
+    assert(f.reduce_fraction("17/17")) == "1"
+    assert(f.reduce_fraction("7")) == "7"
+
+    assert(f.reduce_fraction("3/9")) == "1/3"
+    assert(f.reduce_fraction("9/3")) == "3/1"
+
+    with pytest.raises(ZeroDivisionError):
+        assert(f.reduce_fraction("3/0"))
+
+
+def test_fraction_add_method():
+    f = Fraction()
+
+    assert(f.add("5/7", "3/7")) == "8/7"
+    assert(f.add("7/5", "3/7")) == "64/35"
+
+
+def test_fraction_multiply_method():
+    f = Fraction()
+
+    assert(f.multiply("5/7", "3/7")) == "15/49"
+
+def test_fraction_divide_method():
+    f = Fraction()
+
+    assert(f.divide("5/7", "3/7")) == "5/3"
