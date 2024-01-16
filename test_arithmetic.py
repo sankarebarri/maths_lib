@@ -61,36 +61,67 @@ def test_hcf():
     assert(hcf(512, 84)) == 4
     assert(hcf(1000, 1000)) == 1000
 
-def test_fraction_class():
+def test_fraction_simplify_method():
     f = Fraction()
 
-    assert(f.reduce_fraction("0")) == "0"
-    assert(f.reduce_fraction("1")) == "1"
+    assert(f.simplify("0")) == "0"
+    assert(f.simplify("1")) == "1"
 
-    assert(f.reduce_fraction("1/1")) == "1"
-    assert(f.reduce_fraction("17/17")) == "1"
-    assert(f.reduce_fraction("7")) == "7"
+    assert(f.simplify("1/1")) == "1"
+    assert(f.simplify("17/17")) == "1"
+    assert(f.simplify("7")) == "7"
 
-    assert(f.reduce_fraction("3/9")) == "1/3"
-    assert(f.reduce_fraction("9/3")) == "3/1"
+    assert(f.simplify("3/9")) == "1/3"
+    assert(f.simplify("9/3")) == "3"
 
     with pytest.raises(ZeroDivisionError):
-        assert(f.reduce_fraction("3/0"))
+        assert(f.simplify("3/0"))
 
 
 def test_fraction_add_method():
     f = Fraction()
 
+    assert(f.add("7", "8")) == "15"
+
+    assert(f.add("7", "3/7")) == "52/7"
+    assert(f.add("7/3", "7")) == "28/3"
+
     assert(f.add("5/7", "3/7")) == "8/7"
     assert(f.add("7/5", "3/7")) == "64/35"
+
+    with pytest.raises(ZeroDivisionError):
+        assert(f.add("3/0", "4/6"))
+
+
 
 
 def test_fraction_multiply_method():
     f = Fraction()
 
+    assert(f.multiply("7", "8")) == "56"
+
+    assert(f.multiply("7", "3/7")) == "3"
+    assert(f.multiply("7/3", "7")) == "49/3"
+
     assert(f.multiply("5/7", "3/7")) == "15/49"
+    assert(f.multiply("7/5", "3/7")) == "21/35"
+
+    with pytest.raises(ZeroDivisionError):
+        assert(f.multiply("3/0", "4/6"))
 
 def test_fraction_divide_method():
     f = Fraction()
 
+    assert(f.divide("7", "8")) == "7/8"
+    assert(f.divide("49", "7")) == "7"
+
+    assert(f.divide("7", "3/7")) == "49/3"
+    assert(f.divide("7/3", "7")) == "1/3"
+
     assert(f.divide("5/7", "3/7")) == "5/3"
+    assert(f.divide("7/5", "3/7")) == "49/15"
+
+    assert(f.divide("3/3", "4/0"))
+
+    with pytest.raises(ZeroDivisionError):
+        assert(f.divide("3/0", "4/6"))
