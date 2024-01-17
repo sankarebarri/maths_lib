@@ -55,6 +55,8 @@ def test_lcm():
 
 def test_hcf():
     assert(hcf(0, 0)) == 0
+    assert(hcf(3, 0)) == 0
+    assert(hcf(0, 3)) == 0
     assert(hcf(1, 1)) == 1
     assert(hcf(4, 8)) == 4
     assert(hcf(144, 66)) == 6
