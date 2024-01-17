@@ -89,28 +89,38 @@ def lcm(a, b):
 
 
     
-def hcf(n1 , n2):
+def hcf(a , b):
     """
     Return Highest Common Factor of n1 and n2.
     HCF is same as GCD.
     """
-    if n1 > n2:
-        a, b = n1, n2
-    else:
-        a, b = n2, n1
+    # if n1 == 0 or n2 == 0:
+    #     return 0
 
-    if a == 1 and b == 1:
-        return 1
+    # else:
+    #     if n1 > n2:
+    #         a, b = n1, n2
+    #     else:
+    #         a, b = n2, n1
 
-    if b == 0:
-        return a
-    r = a % b
-    a = a // b
+    #     if a == 1 and b == 1:
+    #         return 1
 
-    a = b
-    b = r
-    return hcf(a, b)
+    #     if b == 0:
+    #         return a
+    #     r = a % b
+    #     a = a // b
 
+    #     a = b
+    #     b = r
+    #     return hcf(a, b)
+    if a == 0 or b == 0:
+        return 0
+    while b:
+        a, b = b, a % b
+    return a
+
+print(hcf(6, 0))
 
 class Fraction():
 
