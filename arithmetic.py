@@ -120,7 +120,7 @@ def hcf(a , b):
         a, b = b, a % b
     return a
 
-print(hcf(6, 0))
+# print(hcf(6, 0))
 
 class Fraction():
 
@@ -147,9 +147,36 @@ class Fraction():
             return f"{int(numerator/cf)}/{int(denominator/cf)}"
         return f"{int(numerator/cf)}"
 
+    # def __add__(self, a, b):
+        # num_a, den_a = self.split(a)
+        # num_b, den_b = self.split(b)
+        # num_a, den_a = int(num_a), int(den_a)
+        # num_b, den_b = int(num_b), int(den_b)
+        # denominator = den_a * den_b
+        # numerator = (num_a * den_b) + (num_b * den_b)
+        # fraction = str(f"{numerator}/{denominator}")
+
+        # return self.simplify(fraction)
+
     def add(self, a, b):
         # call simplify on the final result
-        ...
+        
+        if len(a) == 1:
+            num_a, den_a = a, 1
+        else:
+            num_a, den_a = self.split(a)
+
+        if len(b) == 1:
+            num_b, den_b = b, 1
+        else:
+            num_b, den_b = self.split(b)
+        num_a, den_a = int(num_a), int(den_a)
+        num_b, den_b = int(num_b), int(den_b)
+        denominator = den_a * den_b
+        numerator = (num_a * den_b) + (num_b * den_a)
+        fraction = str(f"{numerator}/{denominator}")
+
+        return self.simplify(fraction)
     
     def multiply(self, a, b):
         # call simplify on the final result
@@ -160,3 +187,6 @@ class Fraction():
         ...
 
     
+f = Fraction()
+r = f.add("7", "3/7")
+print(r)
