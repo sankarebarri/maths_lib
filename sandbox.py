@@ -1,74 +1,66 @@
 # import re
-# # from cf_calculations import hcf
-# # # eq = "2x + 10"
 
-# # if "+" in eq:
-# #     sign = "+"
-# # elif "-" in eq:
-# #     sign = "-"
-# # # else:
-# # #     sign = ""
-# # # # split equations(collect like terms) functions would be more intresting here
-# # # split = ['-2x ', ' 10']
-# # # eq_split = eq.split("+")
-# # # # print(eq_split)
-# # # variable, constant = eq_split[0].strip(), int(eq_split[1].strip())
-# # # variable_coeff = int(variable[:-1])
-# # # # print(variable_coeff)
-# # # if variable_coeff > 0 and sign == "+":
-# # #     cf = hcf(variable_coeff, constant)
-# # #     print(f"{cf}({variable_coeff/cf}x + {constant/cf})")
-# # # if variable_coeff < 0 and sign == "+":
+# input_string = "42+3 - 3 * -3"  # Replace with your actual input string
 
-# from cf_calculations import hcf
-# def factorise_linear_equation(equation):
-#     equation = equation.replace(" ", "")
-#     a, b = re.findall(r'[+-]?\d*\.?\d+', equation)
-#     a, b = int(a), int(b)
-        
-#     if a == 0:
-#         return b
-#     if b == 0:
-#         return f"{a}x"
-#     cf = hcf(abs(a), abs(b))
-#     # print(cf)
-#     if a > 0 and b > 0:
-#         return f"{cf}({a // cf}x + {b // cf})"
-#     elif a > 0 and b < 0:
-#         return f"{cf}({a // cf}x - {abs(b // cf)})"
-#     elif a < 0 and b > 0:
-#         return f"-{cf}({abs(a // cf)}x - {b // cf})"
-#     else:
-#         return f"-{cf}({abs(a // cf)}x + {abs(b // cf)})"
+# # Define the regex pattern
+# pattern = r'\b\d+(?:\.\d+)?\b'
 
-# print(factorise_linear_equation("2x + 10"))
-# print(factorise_linear_equation("2x - 10"))
-# print(factorise_linear_equation("-2x + 10"))
-# print(factorise_linear_equation("-2x - 10"))
-# # print(hcf(5,10))
+# # Find all matches in the input string
+# matches = re.findall(pattern, input_string)
 
-# # def gcd(n1 , n2):
-# #     a, b = max(n1, n2), min(n1, n2)
-# #     if a == 1 and b == 1:
-# #         return 1
+# # Print the extracted numbers
+# print(matches)
 
-# #     if b == 0:
-# #         return a
-# #     r = a % b
-# #     a = a // b
+# import re
 
-# #     a = b
-# #     b = r
-# #     return gcd(a, b)
-# # print(gcd(100, 20))
+# input_string = "42+3 + -58 - 3 * -3"  # Replace with your actual input string
 
-a = [2,3,5,7]
-a_i = iter(a)
+# # Define the regex pattern with an optional minus sign
+# pattern =  r'-?\b\s*\d+(?:\.\d+)?\b'
 
-f = a[0]
-num = 84
-while num%f == 0:
-    print(num/f)
-    num = num / 2
-    if 84%f != 0:
-        f = next(a_i)
+# # Find all matches in the input string
+# matches = re.findall(pattern, input_string)
+
+# # Print the extracted numbers
+# print(matches)
+
+# import re
+
+# input_string = "42+3 + -58 - 3 * -3"  # Replace with your actual input string
+
+# # Define the regex pattern to extract numbers with an optional minus sign and ignore spaces
+# pattern = r'-?\b\s*\d+(?:\.\d+)?\b'
+
+# # Find all matches in the input string, ignoring spaces between the minus sign and the number
+# matches = [float(match.replace(" ", "")) if '-' in match else float(match) for match in re.findall(pattern, input_string)]
+
+# # Print the extracted numbers
+# print(matches)
+
+
+# import re
+
+# def extract_numbers(text):
+#   """
+#   Extracts all numbers from a string containing only numbers and operators.
+
+#   Args:
+#     text: The string to extract numbers from.
+
+#   Returns:
+#     A list of strings representing the extracted numbers.
+#   """
+
+import re
+
+input_string = "42 - 3"  # Replace with your actual input string
+
+# Define the regex pattern to extract numbers with an optional minus sign and handle spaces
+pattern = r'-?\b\s*\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)*\b'
+
+# Find all matches in the input string, considering spaces around the minus sign
+matches = [float(num.replace(" ", "")) for match in re.finditer(pattern, input_string) for num in re.findall(r'-?\d+(?:\.\d+)?', match.group())]
+
+# Print the extracted numbers
+print(matches)
+
