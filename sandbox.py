@@ -53,7 +53,7 @@
 
 import re
 
-input_string = "42 - 3"  # Replace with your actual input string
+input_string = "42"  # Replace with your actual input string
 
 # Define the regex pattern to extract numbers with an optional minus sign and handle spaces
 pattern = r'-?\b\s*\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)*\b'
