@@ -1,3 +1,5 @@
+from treat_numbers import extract_numbers
+
 def factors_of_n(n):
     """
     Return a list of the divisors of n with 1 and n included.
@@ -141,7 +143,7 @@ class Fraction():
         # split = a.split("/")
         # numerator, denominator = int(split[0]), int(split[1])
         
-        numerator, denominator = self.split(a)
+        numerator, denominator = extract_numbers(a)
         cf = hcf(numerator, denominator)
         if int(denominator/cf) != 1:
             return f"{int(numerator/cf)}/{int(denominator/cf)}"
@@ -162,16 +164,16 @@ class Fraction():
         # call simplify on the final result
         
         if len(a) == 1:
-            num_a, den_a = a, 1
+            num_a, den_a = int(a), 1
         else:
-            num_a, den_a = self.split(a)
+            num_a, den_a = extract_numbers(a)
 
         if len(b) == 1:
-            num_b, den_b = b, 1
+            num_b, den_b = int(b), 1
         else:
-            num_b, den_b = self.split(b)
-        num_a, den_a = int(num_a), int(den_a)
-        num_b, den_b = int(num_b), int(den_b)
+            num_b, den_b = extract_numbers(b)
+        # num_a, den_a = int(num_a), int(den_a)
+        # num_b, den_b = int(num_b), int(den_b)
         denominator = den_a * den_b
         numerator = (num_a * den_b) + (num_b * den_a)
         fraction = str(f"{numerator}/{denominator}")
