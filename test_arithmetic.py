@@ -91,6 +91,16 @@ def test_fraction_add_method():
     assert(f.add("5/7", "3/7")) == "8/7"
     assert(f.add("7/5", "3/7")) == "64/35"
 
+    # substraction
+    assert(f.add("7", "-8")) == "-1"
+
+    assert(f.add("7", "-3/7")) == "48/7"
+    assert(f.add("-7/3", "7")) == "14/3"
+
+    assert(f.add("-5/7", "-3/7")) == "-8/7"
+    assert(f.add("-7/5", "-3/7")) == "-56/35"
+
+    # zero
     with pytest.raises(ZeroDivisionError):
         assert(f.add("3/0", "4/6"))
 
